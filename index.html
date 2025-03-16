@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tira-miss-u</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font for Fancy Title -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap JS (for popovers) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* Navbar Styling */
+        .navbar {
+            background: #c5bdaa !important;
+        }
+
+        .navbar a,
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #3e220f !important;
+        }
+
+        .navbar-nav .nav-item .btn {
+            color: #3e220f;
+            background: #e7dac7;
+            border: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-nav .nav-item .btn:hover {
+            background: #dac2a3;
+        }
+
+        /* Background */
+        body {
+            background: #F5E6CA;
+        }
+
+        /* Hero Section */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .hero-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(70%);
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 3.5rem;
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Card Section */
+        .card-container {
+            background: #F5E6CA;
+            padding: 50px 0;
+        }
+
+        .recipe-card {
+            background: #FAF3E0;
+            border: none;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .recipe-card img {
+            border-radius: 10px 10px 0 0;
+        }
+
+        .recipe-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .btn-disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* Origin Section */
+        .origin-section {
+            padding: 60px 0;
+            background: #F5E6CA;
+        }
+
+        .origin-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #3e220f;
+            text-align: justify;
+        }
+
+        .origin-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #3e220f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .origin-img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Styling */
+        .footer {
+            background: #c5bdaa;
+            color: #3e220f;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Origin Section */
+        .origin-section {
+            padding: 60px 0;
+            background:#ba9668;
+        }
+
+        .origin-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #3e220f;
+            text-align: justify;
+        }
+
+        .origin-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #3e220f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .origin-img {
+            max-width: 80%;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .change-bg{
+            background: #ba9668;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="asset/tiramisu.png" height="40" width="40" alt="Tiramisu Logo">
+                Tira-miss-u
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><button class="btn mx-2">Home</button></li>
+                    <li class="nav-item"><button class="btn mx-2">About</button></li>
+                    <li class="nav-item"><button class="btn mx-2 disabled" data-bs-toggle="popover"
+                            data-bs-content="Coming soon!">Recipes</button></li>
+                    <li class="nav-item"><button class="btn mx-2">Contact</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-container">
+        <img src="asset/tiramisu banner.jpg" alt="Tiramisu Banner">
+        <div class="hero-text">Tira-miss-u: The Sweet Escape</div>
+    </div>
+
+    <!-- Recipe Cards Section -->
+    <div class="container card-container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card recipe-card">
+                    <a href="https://www.flaticon.com/free-icons/doughnut" title="doughnut icons">
+                        <img src="asset/tiramisu1.png" class="card-img-top" alt="Classic Tiramisu">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="recipe-title">Classic Tiramisu</h5>
+                        <p>A traditional tiramisu with layers of espresso-soaked ladyfingers and mascarpone.</p>
+                        <button class="btn btn-dark btn-disabled" data-bs-toggle="popover"
+                            data-bs-content="Coming soon!">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card recipe-card">
+                    <img src="asset/tiramisu2.png" class="card-img-top" alt="Strawberry Tiramisu">
+                    <div class="card-body">
+                        <h5 class="recipe-title">Strawberry Tiramisu</h5>
+                        <p>A fruity twist on the classic with fresh strawberries and cream.</p>
+                        <button class="btn btn-dark btn-disabled" data-bs-toggle="popover"
+                            data-bs-content="Coming soon!">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card recipe-card">
+                    <img src="asset/tiramisu3.png" class="card-img-top" alt="Chocolate Tiramisu">
+                    <div class="card-body">
+                        <h5 class="recipe-title">Chocolate Tiramisu</h5>
+                        <p>Rich chocolate layers mixed with coffee-infused mascarpone.</p>
+                        <button class="btn btn-dark btn-disabled" data-bs-toggle="popover"
+                            data-bs-content="Coming soon!">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Origin Section -->
+    <div class="change-bg">
+        <div class="container origin-section">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="asset/origin.png" alt="Tiramisu Origin" class="origin-img">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="origin-title">The Origin of Tiramisu</h2>
+                    <p class="origin-text">
+                        Tiramisu, meaning "pick me up" in Italian, is believed to have originated in Treviso, Italy, during the 1960s or 1970s. One popular story credits its creation to the restaurant Le Beccherie, where chefs Roberto Linguanotto and Francesco Campeol combined espresso-soaked ladyfingers, mascarpone cheese, cocoa, and sweetened eggs to create this iconic dessert.
+                    </p>
+                    <p class="origin-text">
+                        Some believe tiramisu evolved from "sbatudin," a Venetian dish of egg yolks beaten with sugar for an energy boost. Unlike many traditional Italian desserts, tiramisu requires no baking, making it a simple yet indulgent treat. Over time, it has gained worldwide fame, inspiring countless variations while remaining a symbol of Italian elegance.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 Tira-miss-u. Made with ❤️ and Coffee.</p>
+        <p>Contact me at: <a href="mailto:ravibahalu@gmail.com"
+                style="color: #3e220f; text-decoration: none;">ravibahalu@gmail.com</a></p>
+    </div>
+
+    <!-- Enable Popovers -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            popoverTriggerList.map(function (el) { return new bootstrap.Popover(el); });
+        });
+    </script>
+
+</body>
+
+</html>
